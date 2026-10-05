@@ -10,7 +10,8 @@
   const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));
 
   /* ---------------------------------------------------------------- Film */
-  const SEQ = "assets/seq/";
+  // schmale Bildschirme laden die kleinere Bildfolge (720 px statt 1280 px)
+  const SEQ = window.matchMedia("(max-width: 720px)").matches ? "assets/seq-m/" : "assets/seq/";
   const SCENE_VH = 170;      // Scrollstrecke je Szene (muss zu styles.css passen)
   const PLAY_UNTIL = 0.84;   // Anteil der Szene, in dem die Bildfolge läuft
   const FADE = 0.07;         // Überblendung an den Szenengrenzen
